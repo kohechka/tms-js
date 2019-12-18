@@ -3,14 +3,10 @@
     Запишите строку "Вася" в переменную name.
     Скопируйте значение из переменной name в manager.
     Скопируйте значение из переменной manager в currentUser.
-    Выведите в консоль значение переменной currentUser.
-
-let manager;
-let name;
-let currentUser;
-name='Вася';
-manager= name;
-currentUser= manager;
+    Выведите в консоль значение переменной currentUser.*/
+const nameUser='Вася';
+const manager = nameUser;
+const currentUser= manager;
 console.log(currentUser); //ответ: Вася
 
 /*ЗАДАНИЕ №2----------------------------------------------------------------------------------------------------------------
@@ -21,7 +17,7 @@ console.log( `hello ${1}` );   //hello 1 ( в фигурных скобках ч
 console.log( `hello ${"name"}` );  //hello name (name  взято в ковычки, поэтому и выведется name)
 console.log( `hello ${name}` );  //hello Вася  (name без ковычек, значит выведется значение этой переменной, в данном варианте 'Вася')
 
-console.log(" \n \n" - 2);
+console.log(" \n \n" - 2); //-2 в кавычках значение будет 0, 0-2=-2
 console.log(true + false);  //Ответ: 1 Если значение не логического типа – то оно к нему приводится в целях вычислений. Например, число 1 будет воспринято как true, а 0 – как false:
 console.log(false + false); //Ответ: 0 Так как значение false=0
 console.log(6 / "3"); //Ответ: 2
@@ -55,11 +51,13 @@ console.log(false === ""); //false
 Изменить значение свойства цвет
 Вывести в консоль полученый объект*/
 
-let animal = {
-    'type of animal': 'dog',
-     color: 'white',
-     speed: 60,
-     color: 'black',
+const animal = {
+    type: 'dog',
+    weight: 40,
 };
+     animal.color='white';
+     animal.speed=60;
+     delete animal.weight;
+     animal.color='black';
 
-console.log(animal);  //{type of animal: "dog", color: "black", speed: 60}
+console.log(animal);  //{type: "dog", color: "black", speed: 60}
