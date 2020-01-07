@@ -3,14 +3,14 @@
     Запишите строку "Вася" в переменную name.
     Скопируйте значение из переменной name в manager.
     Скопируйте значение из переменной manager в currentUser.
-    Выведите в консоль значение переменной currentUser.*/
+    Выведите в консоль значение переменной currentUser.
 const nameUser='Вася';
 const manager = nameUser;
 const currentUser= manager;
-console.log(currentUser); //ответ: Вася
+console.log(currentUser); //ответ: Вася*/
 
 /*ЗАДАНИЕ №2----------------------------------------------------------------------------------------------------------------
-(Без запуска на компьютере определить что выведется в консоль. Потом проверить, запустив на компьютере и разобраться почему так. )*/
+(Без запуска на компьютере определить что выведется в консоль. Потом проверить, запустив на компьютере и разобраться почему так. )
 
 let name = "Вася";
 console.log( `hello ${1}` );   //hello 1 ( в фигурных скобках числовое значение 1, его и выведет)
@@ -35,7 +35,7 @@ console.log(null + 1); //1
 console.log(undefined + 1);//NaN
 
 /*ЗАДАНИЕ №4------------------------------------------------------------------------------------------------------------
-(/* Без запуска на компьютере определить что выведется. Потом проверить, запустив на компьютере и разобраться почему так. )*/
+(/* Без запуска на компьютере определить что выведется. Потом проверить, запустив на компьютере и разобраться почему так. )
 
 console.log(2 > 4); //false
 console.log(undefined == null); //true
@@ -49,7 +49,7 @@ console.log(false === ""); //false
 Добавить два свойства цвет и скорость с любыми значениями
 удалить свойство вес
 Изменить значение свойства цвет
-Вывести в консоль полученый объект*/
+Вывести в консоль полученый объект
 
 const animal = {
     type: 'dog',
@@ -60,4 +60,52 @@ const animal = {
      delete animal.weight;
      animal.color='black';
 
-console.log(animal);  //{type: "dog", color: "black", speed: 60}
+console.log(animal);  //{type: "dog", color: "black", speed: 60}*/
+
+
+/*Задание № 2*/
+
+const data = [
+    {
+        firstName: 'Ashton',
+        lastName: 'Kutcher',
+        age: 40,
+    },
+    {
+        firstName: 'Bradley',
+        lastName: 'Pitt',
+        age: 54,
+    },
+    {
+        firstName: 'Hannah',
+        lastName: 'Dakota',
+        age: 24,
+    },
+];
+function showResult(lastName) {
+    for (let i = 0; i < data.length; i++) {
+        if (data[i].lastName.toLocaleLowerCase() === lastName) {
+            return data[i];
+        }
+
+    }
+    return 'No results found for your request';
+}
+
+let result = showResult('pitt');
+console.log(result);
+
+const input = document.getElementById('lastNameInput');
+input.addEventListener("keyup", function (event) {
+        let result = showResult(event.target.value);
+        if (typeof (result) === 'object') {
+            let html = '';
+            for (let key in result) {
+                html += key +': '+ result[key]+ '<br>' ;
+            }
+            document.getElementById('showResultInput').innerHTML = html;
+        } else {
+            document.getElementById('showResultInput').innerHTML = result;
+        }
+    }
+);
