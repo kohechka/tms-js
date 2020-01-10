@@ -1,0 +1,11 @@
+* {
+    margin: 0;
+}
+
+form, p {
+    padding: 20px;
+}
+
+input {
+    min-width: 300px;
+}
