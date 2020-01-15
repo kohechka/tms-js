@@ -1,11 +1,3 @@
-// Задание 1
-//1. Замыкания
-//Напишите функцию sum, которая возвращает сумму чисел следующим образом:
-//console.log(sum(5)(2)); // 7
-
-const sum = (a) => (b) => (a + b);
-
-console.log(sum(5)(2));
 
 // Задание 2
 //2. Покрасить абзацы по клику (событие click)
@@ -23,18 +15,22 @@ const text1 = document.getElementById('text1');
 const text2 = document.getElementById('text2');
 const text3 = document.getElementById('text3');
 
-const changeColor = element => {
-    for (let i = 0; i <= colors.length;) {
-        return function () {
-            element.style.color = colors[i];
-            i++;
-            if(i > colors.length){
-                i = 0;
-            }
+const changeStyle = () => {
+    let i = 0;
+
+    return event => {
+        console.log(event);
+        event.target.style.color = colors[i];
+        i++;
+
+        if (i === colors.length) {
+            i = 0;
         }
-    }
+    };
 };
 
-text1.onclick = changeColor(text1);
-text2.onclick = changeColor(text2);
-text3.onclick = changeColor(text3);
+text1.addEventListener('click', changeStyle());
+text2.addEventListener('click', changeStyle());
+text3.addEventListener('click', changeStyle());
+
+// версия классная
