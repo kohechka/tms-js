@@ -2,6 +2,7 @@
 //1. Замыкания
 //Напишите функцию sum, которая возвращает сумму чисел следующим образом:
 //console.log(sum(5)(2)); // 7
+
 const sum = (a) => (b) => (a + b);
 
 console.log(sum(5)(2));
@@ -16,6 +17,7 @@ console.log(sum(5)(2));
 // const colors = ['magenta', 'cyan', 'firebrick', 'springgreen', 'skyblue'];
 // По первому нажатию на абзац он должен покраситься в первый цвет из массива, по второму нажатию - во второй и так далее;
 // Все абзацы работают независимо.
+
 const colors = ['magenta', 'cyan', 'firebrick', 'springgreen', 'skyblue'];
 const text1 = document.getElementById('text1');
 const text2 = document.getElementById('text2');
