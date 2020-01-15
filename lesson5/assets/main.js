@@ -31,7 +31,7 @@ const changeColor = element => {
             }
         }
     }
-}
+};
 
 text1.onclick = changeColor(text1);
 text2.onclick = changeColor(text2);
