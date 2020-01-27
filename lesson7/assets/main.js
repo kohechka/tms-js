@@ -51,7 +51,6 @@ const products = [
     }
 ];
 
-
 //
 const root = document.getElementById('root');
 
@@ -59,7 +58,7 @@ const root = document.getElementById('root');
 products.forEach(function (item) {
     const newProductElement = document.createElement('div');
 
-    newProductElement.className = 'product__container';
+    newProductElement.className = 'product_wrap';
 
     newProductElement.innerHTML = `
 <div class="categories_product container">
@@ -71,10 +70,10 @@ products.forEach(function (item) {
              <h2 class="product_title h2">${item.title}</h2>
              <p class="product_description p">${item.description}</p>
            </div>
-     </div>
-     <div class="product_cost">
+            <div class="product_cost">
              <h2 class="product_cost__info">${item.price.currency}${item.price.value}</h2>
              <a class="button">Add to Basket</a>
+           </div>
      </div>
 </div>`
     root.appendChild(newProductElement);
