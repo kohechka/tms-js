@@ -1,77 +1,82 @@
-// Задание 1*************************************************************************************************************
-/* Покрасить абзацы по клику
-Даны 3 абзаца:
-    <p id="text1">Text 1</p>
-<p id="text2">Text 2</p>
-<p id="text3">Text 3</p>
-Даны цвета:
-    const colors = {
-        data: ['magenta', 'cyan', 'firebrick', 'springgreen', 'skyblue'],
-        [Symbol.iterator]() {
-            // ваш код
-        }
-    }
-По первому нажатию на абзац он должен покраситься в первый цвет из массива, по второму нажатию - во второй и так далее;
-Все абзацы работают независимо;
-Необходимо использовать итераторы (Symbol.iterator) и идентификаторы (Symbol()) для идентификации счетчика;
-Подсказка! Перебор colors должен должен быть бесконечным. Для вызова используйте next(). Т.е. ваш listener должен иметь примерно такой вид:
-    const changeStyle = id => event => {
-        event.target.style.color = colors.next(id).value;
-    };*/
-const text1 = document.getElementById('text1');
-const text2 = document.getElementById('text2');
-const text3 = document.getElementById('text3');
-
-const colors = {
-    data: ['magenta', 'cyan', 'firebrick', 'springgreen', 'skyblue'],
-    [Symbol.iterator]() {
-        return this;
+const products = [
+    {
+        id: '7df3f04b-0ee0-4a8a-bda8-e2931e68860d',
+        title: 'MacBook Pro 16-inch',
+        description: '2.3GHz 8-Core Processor<br>1TB Storage<br>AMD Radeon Pro 5500M',
+        price: {
+            value: 2799.00,
+            currency: 'USD',
+        },
+        imageLink: 'https://www.apple.com/v/mac/home/am/images/overview/hero/macbook_pro_16__ni9nkbyq2dm6_large.jpg'
     },
-    next(id) {
-        if (this[id] === undefined) {
-            this[id] = 0
-        }
-        if (this[id] < this.data.length) {
-            return {
-                done: false,
-                value: this.data[this[id]++]
-            }
-        } else {
-            this[id] = 0;
-            {
-                return {
-                    done: true
-                }
-            }
-        }
+    {
+        id: '69d8b82e-1bc6-45a7-bcb0-ba205c91b8bd',
+        title: 'MacBook Pro 13-inch',
+        description: '2.4GHz Quad-Core Processor with Turbo Boost up to 4.1GHz<br>256GB Storage<br>Touch Bar and Touch ID',
+        price: {
+            value: 1799.00,
+            currency: 'USD',
+        },
+        imageLink: 'https://www.apple.com/v/mac/home/am/images/overview/hero/macbook_pro_16__ni9nkbyq2dm6_large.jpg'
+    },
+    {
+        id: '9c56a489-5581-4552-802a-6e56249b0056',
+        title: 'Mac Pro',
+        description: '3.5GHz 8‑core Intel Xeon W processor, Turbo Boost up to 4.0GHz<br>256GB Storage<br>Radeon Pro 580X with 8GB of GDDR5 memory',
+        price: {
+            value: 5999.00,
+            currency: 'USD',
+        },
+        imageLink: 'https://www.apple.com/v/mac/home/am/images/overview/hero/mac_pro__bn92faz71k6a_large.jpg'
+    },
+    {
+        id: 'e325ae53-ba9b-4b9e-b443-20db05f95c2e',
+        title: 'MacBook Air',
+        description: '2-core Intel Core i5 processor<br>1TB storage<br>12 hours battery life',
+        price: {
+            value: 1099.00,
+            currency: 'USD',
+        },
+        imageLink: 'https://www.apple.com/v/mac/home/am/images/overview/compare/macbook_air__csdfieli984m_large.jpg'
+    },
+    {
+        id: '4f50005d-b422-4adf-b1f6-3b6551862500',
+        title: 'iPhone 11 Pro Max',
+        description: 'Midnight Green<br>521GB Storage<br>20 hours of video playback',
+        price: {
+            value: 1449.00,
+            currency: 'USD',
+        },
+        imageLink: 'https://www.apple.com/v/iphone/home/af/images/overview/compare/compare_iphone_11_pro__fvqwhr4dkhiu_large.jpg'
     }
-};
+];
 
-const changeStyle = id => event => {
-    event.target.style.color = colors.next(id).value;
-};
-text1.addEventListener('click', changeStyle(Symbol()));
-text2.addEventListener('click', changeStyle(Symbol()));
-text3.addEventListener('click', changeStyle(Symbol()));
 
-// Задание 2**********************************************************************************************
-//дан массив:
-    //const data = [4, 56, 33, 42, 15]
-//создать функцию bubbleSort, которая отсортирует массив способом Пузырёк
+//
+const root = document.getElementById('root');
 
-const data = [4, 56, 33, 42, 15];
-const bubbleSort = arr => {
-    for (let i = 0, endI = arr.length - 1; i < endI; i++) {
-        let wasSwap = false;
-        for (let j = 0, endJ = endI - i; j < endJ; j++) {
-            if (arr[j] > arr[j + 1]) {
-                [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
-                wasSwap = true;
-            }
-        }
-        if (!wasSwap) break;
-    }
-    return arr;
-};
-console.log(bubbleSort(data));
+
+products.forEach(function (item) {
+    const newProductElement = document.createElement('div');
+
+    newProductElement.className = 'product__container';
+
+    newProductElement.innerHTML = `
+<div class="categories_product container">
+     <div class="product__container">
+           <div class="product_image">
+             <img class="product_img" src="${item.imageLink}"/>
+           </div>
+           <div class="product_value">
+             <h2 class="product_title h2">${item.title}</h2>
+             <p class="product_description p">${item.description}</p>
+           </div>
+     </div>
+     <div class="product_cost">
+             <h2 class="product_cost__info">${item.price.currency}${item.price.value}</h2>
+             <a class="button">Add to Basket</a>
+     </div>
+</div>`
+    root.appendChild(newProductElement);
+});
 
