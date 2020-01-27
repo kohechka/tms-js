@@ -1,0 +1,150 @@
+@import url('fonts.css');
+
+:root {
+
+}
+* {
+    margin: 0 auto;
+
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.header {
+    padding: 0;
+    background-color: #252525;
+    display: block;
+}
+
+.header__container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.logo {
+    margin: 0;
+}
+
+h2 {
+    color: #ffffff;
+    font-family: 'OpenSans-Regular', sans-serif;
+    font-size: 16px;
+    margin: 0;
+    font-weight: 400;
+}
+.product__container h2 {
+    color: #000000;
+
+}
+p span {
+    font-size: 9px;
+    color: #ffffff;
+    font-family: 'OpenSans-Regular', sans-serif;
+    margin: 0;
+    font-weight: 400;
+    padding: 0 0 0 0;
+}
+
+p {
+    font-size: 12px;
+    font-family: 'OpenSans-Regular', sans-serif;
+}
+.categories_product {
+    background-color: #f5f5f5;
+}
+
+.circle {
+    background-color: #ff8b38;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    margin-right: 3px;
+    margin-top: 16px;
+    text-align: center;
+}
+
+.button {
+    display: inline-flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    height: 35px;
+    min-width: 270px;
+    background-color: #ff8b38;
+    border: 2px solid #ff8b38;
+    color: #ffffff;
+    font-size: 17px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-family: 'OpenSans-Regular', sans-serif;
+    margin: 0;
+}
+
+body {
+    background: #f5f5f5;
+}
+.product_img {
+    height: 115px;
+    padding: 15px 20px 15px 15px;
+    margin: 0;
+}
+.product_image {
+    margin: 0;
+}
+.product__container {
+    background-color: #ffffff;
+    height: 145px;
+    width: 900px;
+    border-radius: 6px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+    display: flex;
+    position: relative;
+}
+
+.product_value {
+    height: 80px;
+    margin: 0;
+    padding: 28px 0 0 0;
+}
+
+.product_title {
+   padding: 0 0 20px 0;
+}
+
+.product_cost {
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
+}
+
+.product_cost__info{
+    text-align: right;
+    padding: 0 0 5px 0;
+}
+
+.search__field {
+    width: 400px;
+    height: 25px;
+    border-style: none;
+    border-radius: 3px;
+}
+
+.basket {
+    position: relative;
+    right: 0;
+    margin: 0;
+}
+
+.basket h2 {
+    padding: 0 15px 0 0;
+    margin-top: -10px;
+}
+.basket p {
+    padding: 0 0 10px 0;
+}
