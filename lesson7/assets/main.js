@@ -52,11 +52,14 @@ const products = [
 ];
 
 //
+
+
 const root = document.getElementById('root');
 
 
 products.forEach(function (item) {
     const newProductElement = document.createElement('div');
+
 
     newProductElement.className = 'product_wrap';
 
@@ -77,5 +80,11 @@ products.forEach(function (item) {
      </div>
 </div>`
     root.appendChild(newProductElement);
+
 });
+
+
+
+
+
 
